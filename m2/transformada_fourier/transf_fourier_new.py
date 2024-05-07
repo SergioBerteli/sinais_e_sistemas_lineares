@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 
 def calcula_modulo(w):
-    return 2/(25 + w**2)**0.5
+    return 1/((1-w**2)**2+(2*w)**2)**0.5
 
 def calcula_fase(w):
-    return -arctan(w/5)
+    return -arctan(w*2/(1-w**2))
 
 x_inicio = -3
 x_fim = 3
@@ -15,7 +15,7 @@ x_num = 100
 t = linspace(x_inicio, x_fim, x_num)
 dx = t[1] - t[0]
 
-sinal = where(t >= 0, 2*e**(-5*t), 0)
+sinal = where(t >= 0, t*e**-t, 0)
 
 module = [calcula_modulo(i) for i in t]
 phase = [calcula_fase(i) for i in t]

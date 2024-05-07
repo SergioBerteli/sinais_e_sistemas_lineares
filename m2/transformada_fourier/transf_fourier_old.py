@@ -8,7 +8,7 @@ x_num = 100
 t = linspace(x_inicio, x_fim, x_num)
 dx = t[1] - t[0]
 
-sinal = where(t >= 0, 2*e**(-5*t), 0)
+sinal = where(t >= 0, 1, 0)
 
 fou_transf = fft.fft(sinal) * (t[1] - t[0])
 

@@ -2,9 +2,9 @@ from numpy import real, imag
 from scipy import signal
 import matplotlib.pyplot as plt
 
-numerador = [1, 3, 2] # s^2 + 3*s + 2
+numerador = [1, 0, 9] # s^2 + 3*s + 2
 
-denominador = [1, 6, 11, 6] # s^3 + 6*s^2 + 11*s + 6
+denominador = [1, 3, 2, 0] # s^3 + 6*s^2 + 11*s + 6
 
 # criando a função de transferencia
 

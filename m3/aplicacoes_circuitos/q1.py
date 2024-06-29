@@ -1,5 +1,6 @@
 from numpy import real, imag, e, linspace, roots
 import matplotlib.pyplot as plt
+from scipy.signal import TransferFunction, bode
 
 def resp_tempo(t, r, c):
     if (t > 0):
@@ -32,6 +33,28 @@ plt.ylabel('Imaginário')
 plt.title('Polos e zeros da função de transferência')
 plt.legend()
 plt.show()
+
+# Bode
+
+
+ft = TransferFunction(numerador, denominador) # cria fn de transferencai
+
+w, A, fase = bode(ft)
+
+plt.figure()
+plt.semilogx(w, A)  
+plt.title('Diagrama de bode - ganho em db')
+plt.xlabel('W')
+plt.ylabel('Ganho [dB]')
+plt.grid(which='both', axis='both')
+
+plt.figure()
+plt.semilogx(w, fase)  
+plt.title('Diagrama de bode - fase')
+plt.xlabel('W')
+plt.ylabel('Fase')
+plt.grid(which='both', axis='both')
+
 
 t = linspace(-5, 5, 400)
 y = [resp_tempo(i, res, cap) for i in t]

@@ -1,0 +1,27 @@
+from tabulate import tabulate
+prev_ns = 2
+n_max = 5
+
+impulso = [1 if i==prev_ns else 0 for i in range(n_max+prev_ns)]
+
+degrau = [1 if i>=prev_ns else 0 for i in range(n_max+prev_ns)]
+
+exp = [(1/2)**i if i>=prev_ns else 0 for i in range(n_max+prev_ns)]
+
+
+def primeira_fn_discreta(y, x, n):
+    res = x[n] - 1/4*y[n-1]-1/8*y[n-2]
+    y.append(res)
+
+y = [0 for i in range(prev_ns)]
+
+x = degrau
+
+for i in range(n_max):
+    primeira_fn_discreta(y, x, i+prev_ns)
+
+headers = ["n", "y(n)", "x(n)"]
+
+table = zip([i for i in range(-prev_ns, n_max)], y, x)
+
+print(tabulate(table, headers))

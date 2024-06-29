@@ -1,16 +1,16 @@
-from numpy import real, imag
-from scipy import signal
+
+from numpy import real, imag, e, linspace, roots
 import matplotlib.pyplot as plt
 
-numerador = [1, 0, 9] # s^2 + 3*s + 2
+numerador = [0.2, 0.1] # 1(rc)
 
-denominador = [1, 3, 2, 0] # s^3 + 6*s^2 + 11*s + 6
+denominador = [1, 0.7, -0.5] # s + 1/(rc)
 
-# criando a função de transferencia
 
-fn_transf = signal.TransferFunction(numerador, denominador)
+zeros = roots(numerador)
+polos = roots(denominador)
 
-zeros, polos, ganho = signal.tf2zpk(numerador, denominador)
+print(zeros, polos)
 
 # plot do gráfico
 

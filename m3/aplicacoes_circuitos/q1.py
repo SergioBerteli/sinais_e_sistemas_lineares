@@ -20,6 +20,8 @@ polos = roots(denominador)
 
 print(zeros, polos)
 
+# plot da função de transferência
+
 a = r'H(S) = \frac{'+str(numerador[0])+r'}{s + '+str(denominador[1])+r'}'
 ax = plt.axes([0,0,0.3,0.3]) #left,bottom,width,height
 ax.set_xticks([])

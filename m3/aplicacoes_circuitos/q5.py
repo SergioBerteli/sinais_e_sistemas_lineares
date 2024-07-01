@@ -79,6 +79,6 @@ plt.axvline(0, color='black', lw=0.5)
 plt.grid(True, which='both', linestyle='--', lw=0.5)
 plt.xlabel('Tempo')
 plt.ylabel('Tensão de saída')
-plt.title('Resposta do circuito ao degrau no tempo')
+plt.title('Resposta do circuito ao degrau no tempo com r = 2, c = 0.1, l = 0.01')
 
 plt.show()

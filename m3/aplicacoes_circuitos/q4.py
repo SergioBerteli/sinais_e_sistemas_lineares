@@ -4,9 +4,9 @@ from scipy.signal import TransferFunction, bode, step
 
 def resp_tempo(t):
     """
-    R= 1
-    C = 0.1
-    L = 0.01    
+    R= 2
+    C = 100000
+    L = 10
     """
     if (t > 0):
         return -0.03*e**(-5.13*t)+1.03*e**(-194.9*t)

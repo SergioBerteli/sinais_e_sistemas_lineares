@@ -1,4 +1,4 @@
-from numpy import real, imag, e, linspace, roots
+from numpy import real, imag, e, linspace, roots, pi
 import matplotlib.pyplot as plt
 from scipy.signal import TransferFunction, bode
 
@@ -50,6 +50,10 @@ plt.show()
 ft = TransferFunction(numerador, denominador) # cria fn de transferencai
 w = linspace(10**-1, 10**3, 10**4)
 w, A, fase = bode(ft, w=w)
+w = w/(2*pi)
+
+fc = 1/(2*pi*res*cap)
+print(fc)
 
 plt.figure()
 plt.semilogx(w, A)  
@@ -83,3 +87,4 @@ plt.ylabel('Tensão de saída')
 plt.title('Resposta do circuito ao degrau')
 plt.legend()
 plt.show()
+

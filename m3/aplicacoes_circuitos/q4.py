@@ -55,7 +55,7 @@ plt.legend()
 
 
 ft = TransferFunction(numerador, denominador) # cria fn de transferencai
-w = linspace(10**-2, 10**4, 10**5)
+w = linspace(10**-2, 10**6, 10**5)
 w, A, fase = bode(ft, w=w)
 
 plt.figure()
